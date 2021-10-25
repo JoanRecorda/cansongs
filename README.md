@@ -71,8 +71,19 @@ Installed Vue CLI (and npm)
 
 https://vuejs.org/v2/guide/installation.html
 
+npm install vue
+npm install vue-router
+npm install
+npm run watch
+
+## About Axios
+
+npm install vue-axios
+
+
 ## About Tailwind
 
 Installed Tailwind
 
 https://tailwindcss.com/
+
