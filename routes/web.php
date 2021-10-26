@@ -14,10 +14,17 @@ use App\Http\Controllers\SongController;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('/songs', [SongController::class, 'index']);
 
 Route::get('/songs/{song}', [SongController::class, 'show']);
+
+*/
+
+Route::get('{any}', function(){
+    return view('app');
+})->where('any', '.*');
