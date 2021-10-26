@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Song;
+use App\Models\Rehearsal;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Song::factory(10)->create();
+        Song::factory(10)->create();
+        Rehearsal::factory(10)->create();
     }
 }

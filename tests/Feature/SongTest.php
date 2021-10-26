@@ -15,18 +15,20 @@ class SongTest extends TestCase
      * @return void
      */
     use RefreshDatabase;
-    public function test_songCanBeCreated()
+    public function test_songCanBeCreatedByFactory()
     {
         Song::factory()->create();
         $this->assertEquals(1, Song::all()->count());
     }
 
+    /**
     public function test_songsViewCanBeRendered()
     {
         $response = $this->get('/songs');
 
         $response->assertStatus(200);
     }
+     */
 
     public function test_listOfSongsCanBeRetrieved()
     {

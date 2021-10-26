@@ -34,7 +34,7 @@ class SongController extends Controller
     public function destroy(Song $song){
         $song->delete();
         return response()->json([
-            'message'=> 'Song has been successfully destroyed'
+            'message'=> 'Songs has been successfully DESTROYED'
         ]);
     }
 }
