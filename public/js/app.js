@@ -2069,6 +2069,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "App"
 });
@@ -19726,7 +19746,56 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Component CAN SONGS app.vue main ")])
+  return _c("main", [
+    _c(
+      "nav",
+      {
+        staticClass:
+          "md:ml-auto flex flex-wrap items-center text-base justify-center",
+      },
+      [
+        _c("ul", [
+          _c(
+            "li",
+            { staticClass: "mr-5 hover:text-gray-900" },
+            [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "mr-5 hover:text-gray-900" },
+            [_c("router-link", { attrs: { to: "/songs" } }, [_vm._v("Songs")])],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "mr-5 hover:text-gray-900" },
+            [
+              _c("router-link", { attrs: { to: "/rehearsals" } }, [
+                _vm._v("Rehearsals"),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "mr-5 hover:text-gray-900" },
+            [
+              _c("router-link", { attrs: { to: "/contact" } }, [
+                _vm._v("Contact"),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", [_c("router-view")], 1),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
