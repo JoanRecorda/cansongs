@@ -2184,6 +2184,14 @@ var Home = function Home() {
 
 var Contact = function Contact() {
   return __webpack_require__.e(/*! import() */ "resources_js_Components_Contact_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./Components/Contact.vue */ "./resources/js/Components/Contact.vue"));
+};
+
+var Songs = function Songs() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Components_Songs_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./Components/Songs.vue */ "./resources/js/Components/Songs.vue"));
+};
+
+var Rehearsals = function Rehearsals() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Components_Rehearsals_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./Components/Rehearsals.vue */ "./resources/js/Components/Rehearsals.vue"));
 }; // Then we import components for the 'song'
 
 
@@ -2204,9 +2212,9 @@ var routes = [{
   path: '/',
   component: Home
 }, {
-  name: 'contact',
-  path: '/contact',
-  component: Contact
+  name: 'Songs',
+  path: '/songs',
+  component: Songs
 }, {
   name: 'createSong',
   path: '/song/create',
@@ -2219,6 +2227,14 @@ var routes = [{
   name: 'editSong',
   path: '/song/edit/:id',
   component: Edit
+}, {
+  name: 'rehearsals',
+  path: '/rehearsals',
+  component: Rehearsals
+}, {
+  name: 'contact',
+  path: '/contact',
+  component: Contact
 }];
 
 /***/ }),
@@ -35243,7 +35259,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Components_Home_vue":1,"resources_js_Components_Contact_vue":1,"resources_js_Components_Song_Create_vue":1,"resources_js_Components_Song_Show_vue":1,"resources_js_Components_Song_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Components_Home_vue":1,"resources_js_Components_Contact_vue":1,"resources_js_Components_Songs_vue":1,"resources_js_Components_Rehearsals_vue":1,"resources_js_Components_Song_Create_vue":1,"resources_js_Components_Song_Show_vue":1,"resources_js_Components_Song_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

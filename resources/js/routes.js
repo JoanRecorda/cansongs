@@ -1,5 +1,7 @@
 const Home = ()=> import('./Components/Home.vue')
 const Contact = ()=> import('./Components/Contact.vue')
+const Songs = ()=> import('./Components/Songs.vue')
+const Rehearsals = ()=> import('./Components/Rehearsals.vue')
 
         // Then we import components for the 'song'
 
@@ -14,9 +16,9 @@ export const routes = [
         component:Home
     },
     {
-        name: 'contact',
-        path: '/contact',
-        component:Contact
+        name: 'Songs',
+        path: '/songs',
+        component:Songs
     },
     {
         name: 'createSong',
@@ -32,5 +34,15 @@ export const routes = [
         name: 'editSong',
         path: '/song/edit/:id',
         component:Edit
+    },
+    {
+        name: 'rehearsals',
+        path: '/rehearsals',
+        component:Rehearsals
+    },
+    {
+        name: 'contact',
+        path: '/contact',
+        component:Contact
     },
 ]
