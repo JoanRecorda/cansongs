@@ -1,5 +1,6 @@
 const Home = ()=> import('./Components/Home.vue')
 const Contact = ()=> import('./Components/Contact.vue')
+const Songs = ()=> import('./Components/Songs.vue')
 
         // Then we import components for the 'song'
 
@@ -12,6 +13,11 @@ export const routes = [
         name: 'home',
         path: '/',
         component:Home
+    },
+    {
+        name: 'songs',
+        path: '/songs',
+        component:Songs
     },
     {
         name: 'contact',
