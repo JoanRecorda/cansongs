@@ -1,5 +1,24 @@
 <template>
-<h1>Songs {{songs}}</h1>
+<div>
+<h1>Songs</h1>
+<table v-for="song in songs" :key="song.id">
+  <tr>
+    <th>Title</th>
+    <th>Date of Creation</th>
+    <th>Lyrics</th>
+  </tr>
+  <tr>
+    <td>{{song.title}}</td>
+    <td>{{song.date}}</td>
+    <td>{{song.lyrics}}</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
+</div>
 </template>
 
 <script>
