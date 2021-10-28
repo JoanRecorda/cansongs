@@ -1,7 +1,7 @@
 <template>
     <main>
-        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <ul>
+       
+           <ul>
                 <li class="mr-5 hover:text-gray-900">
                     <router-link to="/">Home</router-link>
                 </li>
@@ -15,7 +15,8 @@
                     <router-link to="/contact">Contact</router-link>
                 </li>
             </ul>
-        </nav>
+
+ 
         <div>
             <router-view></router-view>
         </div>

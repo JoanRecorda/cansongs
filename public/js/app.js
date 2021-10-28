@@ -2089,6 +2089,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "App"
 });
@@ -19755,52 +19756,39 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c(
-      "nav",
-      {
-        staticClass:
-          "md:ml-auto flex flex-wrap items-center text-base justify-center",
-      },
-      [
-        _c("ul", [
-          _c(
-            "li",
-            { staticClass: "mr-5 hover:text-gray-900" },
-            [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "li",
-            { staticClass: "mr-5 hover:text-gray-900" },
-            [_c("router-link", { attrs: { to: "/songs" } }, [_vm._v("Songs")])],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "li",
-            { staticClass: "mr-5 hover:text-gray-900" },
-            [
-              _c("router-link", { attrs: { to: "/rehearsals" } }, [
-                _vm._v("Rehearsals"),
-              ]),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "li",
-            { staticClass: "mr-5 hover:text-gray-900" },
-            [
-              _c("router-link", { attrs: { to: "/contact" } }, [
-                _vm._v("Contact"),
-              ]),
-            ],
-            1
-          ),
-        ]),
-      ]
-    ),
+    _c("ul", [
+      _c(
+        "li",
+        { staticClass: "mr-5 hover:text-gray-900" },
+        [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        { staticClass: "mr-5 hover:text-gray-900" },
+        [_c("router-link", { attrs: { to: "/songs" } }, [_vm._v("Songs")])],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        { staticClass: "mr-5 hover:text-gray-900" },
+        [
+          _c("router-link", { attrs: { to: "/rehearsals" } }, [
+            _vm._v("Rehearsals"),
+          ]),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        { staticClass: "mr-5 hover:text-gray-900" },
+        [_c("router-link", { attrs: { to: "/contact" } }, [_vm._v("Contact")])],
+        1
+      ),
+    ]),
     _vm._v(" "),
     _c("div", [_c("router-view")], 1),
   ])
@@ -19937,7 +19925,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*!
-  * vue-router v3.5.2
+  * vue-router v3.5.3
   * (c) 2021 Evan You
   * @license MIT
   */
@@ -19950,7 +19938,7 @@ function assert (condition, message) {
 }
 
 function warn (condition, message) {
-  if ( true && !condition) {
+  if (!condition) {
     typeof console !== 'undefined' && console.warn(("[vue-router] " + message));
   }
 }
@@ -20456,7 +20444,7 @@ function parsePath (path) {
 }
 
 function cleanPath (path) {
-  return path.replace(/\/\//g, '/')
+  return path.replace(/\/+/g, '/')
 }
 
 var isarray = Array.isArray || function (arr) {
@@ -22248,7 +22236,9 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
           cb(err);
         });
       } else {
-        warn(false, 'uncaught error during route navigation:');
+        if (true) {
+          warn(false, 'uncaught error during route navigation:');
+        }
         console.error(err);
       }
     }
@@ -22263,6 +22253,9 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     route.matched[lastRouteIndex] === current.matched[lastCurrentIndex]
   ) {
     this.ensureURL();
+    if (route.hash) {
+      handleScroll(this.router, current, route, false);
+    }
     return abort(createNavigationDuplicatedError(current, route))
   }
 
@@ -22826,6 +22819,9 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
 var VueRouter = function VueRouter (options) {
   if ( options === void 0 ) options = {};
 
+  if (true) {
+    warn(this instanceof VueRouter, "Router must be called with the new operator.");
+  }
   this.app = null;
   this.apps = [];
   this.options = options;
@@ -23070,7 +23066,7 @@ function createHref (base, fullPath, mode) {
 }
 
 VueRouter.install = install;
-VueRouter.version = '3.5.2';
+VueRouter.version = '3.5.3';
 VueRouter.isNavigationFailure = isNavigationFailure;
 VueRouter.NavigationFailureType = NavigationFailureType;
 VueRouter.START_LOCATION = START;
