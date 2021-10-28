@@ -21,18 +21,14 @@ class SongTest extends TestCase
         $this->assertEquals(1, Song::all()->count());
     }
 
-    /**
-    public function test_songsViewCanBeRendered()
-    {
-        $response = $this->get('/songs');
-
-        $response->assertStatus(200);
-    }
-     */
+   
 
     public function test_listOfSongsCanBeRetrieved()
     {
         Song::factory(2)->create();
+        $response = $this->get('/songs');
+
+        $response->assertStatus(200);
         $this->assertEquals(2, Song::all()->count());
     }
 }
