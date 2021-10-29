@@ -12,11 +12,7 @@
     <td>{{song.date}}</td>
     <td>{{song.lyrics}}</td>
   </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
+
 </table>
 </div>
 </template>
