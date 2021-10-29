@@ -49,6 +49,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Songs",
   data: function data() {
@@ -945,6 +954,10 @@ var render = function () {
     [
       _c("h1", [_vm._v("Songs")]),
       _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("button", [_vm._v("New Song")]),
+      _vm._v(" "),
       _vm._l(_vm.songs, function (song) {
         return _c("table", { key: song.id }, [
           _vm._m(0, true),
@@ -955,6 +968,12 @@ var render = function () {
             _c("td", [_vm._v(_vm._s(song.date))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(song.lyrics))]),
+            _vm._v(" "),
+            _vm._m(1, true),
+            _vm._v(" "),
+            _vm._m(2, true),
+            _vm._v(" "),
+            _vm._m(3, true),
           ]),
         ])
       }),
@@ -973,7 +992,31 @@ var staticRenderFns = [
       _c("th", [_vm._v("Date of Creation")]),
       _vm._v(" "),
       _c("th", [_vm._v("Lyrics")]),
+      _vm._v(" "),
+      _c("th"),
+      _vm._v(" "),
+      _c("th"),
+      _vm._v(" "),
+      _c("th"),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("button", [_vm._v("View")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("button", [_vm._v("Edit")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("button", [_vm._v("Delete")])])
   },
 ]
 render._withStripped = true
