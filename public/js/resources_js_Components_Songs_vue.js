@@ -58,6 +58,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Songs",
   data: function data() {
@@ -91,6 +99,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    deleteSong: function deleteSong(id) {
+      var _this2 = this;
+
+      this.axios["delete"]("/api/song/".concat(id)).then(function (response) {
+        _this2.showSongs();
+      })["catch"](function (error) {
+        _this2.song = [];
+      });
     }
   }
 });
@@ -949,20 +966,28 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h1", [_vm._v("Songs")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("button", [_vm._v("New Song")]),
-      _vm._v(" "),
-      _vm._l(_vm.songs, function (song) {
-        return _c("table", { key: song.id }, [
-          _vm._m(0, true),
-          _vm._v(" "),
-          _c("tr", [
+  return _c("div", [
+    _c("h1", [_vm._v("Songs")]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "button",
+      [
+        _c("router-link", { attrs: { to: "/song/create" } }, [
+          _vm._v("\n    New Song\n    "),
+        ]),
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "table",
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.songs, function (song) {
+          return _c("tr", { key: song.id }, [
             _c("td", [_vm._v(_vm._s(song.title))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(song.date))]),
@@ -971,15 +996,44 @@ var render = function () {
             _vm._v(" "),
             _vm._m(1, true),
             _vm._v(" "),
-            _vm._m(2, true),
+            _c("td", [
+              _c(
+                "button",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "editSong", params: { id: song.id } },
+                      },
+                    },
+                    [_vm._v("\n                Edit\n            ")]
+                  ),
+                ],
+                1
+              ),
+            ]),
             _vm._v(" "),
-            _vm._m(3, true),
-          ]),
-        ])
-      }),
-    ],
-    2
-  )
+            _c("td", [
+              _c(
+                "button",
+                {
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.deleteSong("" + song.id)
+                    },
+                  },
+                },
+                [_vm._v("Delete")]
+              ),
+            ]),
+          ])
+        }),
+      ],
+      2
+    ),
+  ])
 }
 var staticRenderFns = [
   function () {
@@ -1005,18 +1059,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("td", [_c("button", [_vm._v("View")])])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [_c("button", [_vm._v("Edit")])])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [_c("button", [_vm._v("Delete")])])
   },
 ]
 render._withStripped = true

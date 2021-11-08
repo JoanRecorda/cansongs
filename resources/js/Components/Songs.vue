@@ -2,8 +2,12 @@
 <div>
 <h1>Songs</h1>
 <br>
-<button>New Song</button>
-<table v-for="song in songs" :key="song.id">
+<button>
+    <router-link to="/song/create">
+    New Song
+    </router-link>
+</button>
+<table>
   <tr>
     <th>Title</th>
     <th>Date of Creation</th>
@@ -12,15 +16,19 @@
     <th></th>
     <th></th>
   </tr>
-  <tr>
+  <tr v-for="song in songs" :key="song.id">
     <td>{{song.title}}</td>
     <td>{{song.date}}</td>
     <td>{{song.lyrics}}</td>
     <td><button>View</button></td>
-    <td><button>Edit</button></td>
-    <td><button>Delete</button></td>
+    <td><button>
+            <router-link :to='{name:"editSong", params:{id:song.id}}'>
+                Edit
+            </router-link>
+        </button></td>
+    <td><button @click.prevent="deleteSong(`${song.id}`)">Delete</button></td>
   </tr>
-  
+
 
 </table>
 </div>
@@ -45,6 +53,15 @@ export default {
                 this.songs = response.data
             })
             .catch(error => {
+                this.song = []
+            })
+        },
+        deleteSong(id){
+            this.axios.delete(`/api/song/${id}`)
+            .then(response=>{
+                this.showSongs()
+            })
+            .catch(error=>{
                 this.song = []
             })
         }
