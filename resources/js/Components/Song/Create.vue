@@ -9,7 +9,7 @@
             <br>
                 <span>
                     <label>Date</label>
-                    <input type="date" class="form-control" v-model="song.date">
+                    <input type="text" class="form-control" v-model="song.date">
                 </span>
             <br>
                 <span>
@@ -39,10 +39,13 @@ export default {
     },
     methods:{
         async createSg(){
-            await this.axios.post('/api/song')
+            await this.axios.post('/api/song', this.song)
                 .then(response=>{
                     this.$router.push({name:"songs"})
                 })
+            .catch(error=>{
+                console.log(error);
+            })
         }
     }
 }

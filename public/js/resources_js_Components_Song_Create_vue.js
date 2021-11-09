@@ -78,10 +78,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.post('/api/song').then(function (response) {
+                return _this.axios.post('/api/song', _this.song).then(function (response) {
                   _this.$router.push({
                     name: "songs"
                   });
+                })["catch"](function (error) {
+                  console.log(error);
                 });
 
               case 2:
@@ -1002,7 +1004,7 @@ var render = function () {
               },
             ],
             staticClass: "form-control",
-            attrs: { type: "date" },
+            attrs: { type: "text" },
             domProps: { value: _vm.song.date },
             on: {
               input: function ($event) {
