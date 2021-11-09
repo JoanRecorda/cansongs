@@ -15,10 +15,9 @@ class SongController extends Controller
 
     public function store(Request $request){
         $song = Song::create($request->post());
-        dd($song);
-        // return response()->json([
-            // 'song'=>$song
-        // ]);
+        return response()->json([
+            'song'=>$song
+        ]);
     }
 
     public function show(Song $song){
